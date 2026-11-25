@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pemerintah Desa Setupatok</title>
+<meta name="description" content="Situs resmi Desa Setupatok, Kecamatan Mundu, Kabupaten Cirebon: profil, layanan, berita, dan kontak.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --laut:#0F4C5C; --laut-tua:#0A3640; --sawah:#5E8C3A; --padi:#E8B33F;
+  --bg:#EDF3F1; --surface:#FFFFFF; --ink:#14262B; --muted:#4A5E63; --line:#CBD9D6;
+  --on-laut:#F2F8F7;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --laut:#7CC4D4; --laut-tua:#0B1F25; --sawah:#9BC66F; --padi:#E8B33F;
+    --bg:#0E1A1D; --surface:#15272B; --ink:#E6EFEE; --muted:#9DB2B5; --line:#27403F; --on-laut:#E6EFEE;
+  }
+}
+:root[data-theme="dark"]{
+  --laut:#7CC4D4; --laut-tua:#0B1F25; --sawah:#9BC66F; --padi:#E8B33F;
+  --bg:#0E1A1D; --surface:#15272B; --ink:#E6EFEE; --muted:#9DB2B5; --line:#27403F; --on-laut:#E6EFEE;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Nunito Sans",system-ui,sans-serif;font-size:17px;line-height:1.65}
+h1,h2,h3{font-family:Bitter,Georgia,serif;line-height:1.2;margin:0 0 .5em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--padi);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surface);z-index:21}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;flex-wrap:wrap;padding:8px 0}
+.brand{font-family:Bitter,serif;font-weight:800;font-size:1.15rem;text-decoration:none;color:var(--laut)}
+nav ul{display:flex;gap:4px 18px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:600;font-size:.95rem;padding:6px 2px;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--padi)}
+.hero{background:var(--laut);color:var(--on-laut);position:relative;overflow:hidden}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero{background:var(--laut-tua);}}
+.hero svg.mega{position:absolute;inset:0;width:100%;height:100%;opacity:.16}
+.hero .wrap{position:relative;padding-top:88px;padding-bottom:96px}
+.hero h1{font-size:clamp(2.3rem,7vw,4.4rem);font-weight:800;margin-bottom:.3em;max-width:14ch}
+.hero p{max-width:52ch;font-size:1.15rem;margin:0 0 28px}
+.btn{display:inline-block;background:var(--padi);color:#14262B;font-weight:700;text-decoration:none;padding:12px 22px;border-radius:6px;margin:0 10px 10px 0}
+.btn.alt{background:transparent;color:inherit;border:2px solid currentColor}
+section{padding:68px 0}
+section h2{font-size:clamp(1.6rem,4vw,2.2rem);color:var(--laut)}
+.lead{max-width:64ch;color:var(--muted)}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:28px}
+.stat{border-left:5px solid var(--sawah);padding:4px 0 4px 16px}
+.stat b{display:block;font-family:Bitter,serif;font-size:2rem;color:var(--laut)}
+.stat span{color:var(--muted)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px}
+.panel h3{font-size:1.15rem}
+.panel p{margin:0;color:var(--muted)}
+.panel time{font-size:.88rem;color:var(--sawah);font-weight:700}
+details{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700}
+details p{margin:10px 0 0;color:var(--muted)}
+.alt-bg{background:var(--surface);border-block:1px solid var(--line)}
+.two{display:grid;gap:36px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+dl{margin:0}dt{font-weight:700;margin-top:14px}dd{margin:0;color:var(--muted)}
+footer{background:var(--laut-tua);color:#C9DCDD;padding:30px 0;font-size:.92rem}
+.note{font-size:.85rem;color:var(--muted);margin-top:18px}
+.table-scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:420px;background:var(--surface)}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line)}
+th{color:var(--laut)}
+.form{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:24px;max-width:760px;margin-top:26px}
+.row{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.f{margin-bottom:16px}
+.f label{display:block;font-weight:700;margin-bottom:4px}
+.f small{display:block;color:var(--muted);font-size:.85rem;margin-top:2px}
+.f input,.f select,.f textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:10px 12px}
+.f textarea{min-height:96px;resize:vertical}
+.chk{display:flex;gap:10px;align-items:flex-start;margin-bottom:18px}
+.chk input{margin-top:6px;width:18px;height:18px}
+.acts{display:flex;gap:10px;flex-wrap:wrap}
+.acts button{font:inherit;font-weight:700;border-radius:6px;padding:12px 20px;cursor:pointer;border:2px solid var(--laut);background:var(--laut);color:var(--surface)}
+.acts button.alt{background:transparent;color:var(--laut)}
+#status{margin-top:16px;font-weight:600;min-height:1.6em}
+#status.err{color:#B3261E}
+#status.ok{color:var(--sawah)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) #status.err{color:#FFB4AB}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#beranda">Desa Setupatok</a>
+    <nav aria-label="Menu utama">
+      <ul>
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#ajukan">Ajukan online</a></li>
+        <li><a href="#berita">Berita</a></li>
+        <li><a href="#potensi">Potensi</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="beranda">
+  <div class="hero">
+    <svg class="mega" aria-hidden="true" preserveAspectRatio="xMidYMid slice" viewBox="0 0 800 400" fill="none" stroke="currentColor" stroke-width="3">
+      <g id="m"><path d="M0 120c40-60 110-60 140 0s100 60 140 0 110-60 140 0 100 60 140 0 110-60 140 0"/><path d="M0 150c30-40 90-40 115 0s85 40 115 0 90-40 115 0 85 40 115 0 90-40 115 0 85 40 115 0"/><path d="M0 180c25-28 75-28 95 0s70 28 95 0 75-28 95 0 70 28 95 0 75-28 95 0 70 28 95 0 75-28 95 0"/></g>
+      <use href="#m" y="120"/><use href="#m" y="240"/>
+    </svg>
+    <div class="wrap">
+      <h1>Selamat datang di Desa Setupatok</h1>
+      <p>Kecamatan Mundu, Kabupaten Cirebon, Jawa Barat. Informasi desa, layanan warga, dan kabar terbaru, terbuka untuk semua.</p>
+      <a class="btn" href="#ajukan">Ajukan layanan online</a>
+      <a class="btn alt" href="#profil">Kenali desa kami</a>
+    </div>
+  </div>
+
+  <section id="profil">
+    <div class="wrap">
+      <h2>Profil desa</h2>
+      <p class="lead">Setupatok adalah desa di wilayah Kecamatan Mundu, Kabupaten Cirebon. Halaman ini memuat gambaran umum desa, layanan administrasi, dan informasi kegiatan bagi warga maupun pengunjung.</p>
+      <div class="grid">
+        <div class="stat"><b>… jiwa</b><span>Jumlah penduduk</span></div>
+        <div class="stat"><b>… KK</b><span>Kepala keluarga</span></div>
+        <div class="stat"><b>… RW / … RT</b><span>Wilayah rukun</span></div>
+        <div class="stat"><b>… ha</b><span>Luas wilayah</span></div>
+      </div>
+      <p class="note">Angka di atas masih kosong. Isi dengan data resmi desa terbaru.</p>
+    </div>
+  </section>
+
+  <section class="alt-bg">
+    <div class="wrap two">
+      <div>
+        <h2>Visi</h2>
+        <p>Desa Setupatok yang maju, mandiri, dan sejahtera dengan pelayanan yang cepat, jujur, dan terbuka bagi seluruh warga.</p>
+      </div>
+      <div>
+        <h2>Misi</h2>
+        <p>Meningkatkan mutu pelayanan administrasi, memperkuat ekonomi warga, menjaga lingkungan, dan membuka informasi anggaran desa kepada masyarakat.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="layanan">
+    <div class="wrap">
+      <h2>Layanan administrasi</h2>
+      <p class="lead">Bawa berkas asli dan fotokopi ke kantor desa pada jam pelayanan. Persyaratan dapat disesuaikan oleh petugas desa.</p>
+      <div style="margin-top:26px;max-width:760px">
+        <details><summary>Surat pengantar KTP / KK</summary><p>Fotokopi KK, KTP, dan surat pengantar RT/RW. Diproses di kantor desa.</p></details>
+        <details><summary>Surat keterangan domisili</summary><p>Fotokopi KTP, KK, dan surat pengantar RT/RW.</p></details>
+        <details><summary>Surat keterangan tidak mampu (SKTM)</summary><p>Fotokopi KK dan KTP, surat pengantar RT/RW, serta keterangan keperluan.</p></details>
+        <details><summary>Surat keterangan usaha</summary><p>Fotokopi KTP, KK, dan keterangan jenis serta alamat usaha.</p></details>
+        <details><summary>Pengurusan akta kelahiran dan kematian</summary><p>Surat keterangan dari bidan atau RS, fotokopi KK dan KTP orang tua atau pelapor.</p></details>
+      </div>
+      <p class="note">Daftar ini contoh. Sesuaikan dengan aturan layanan yang berlaku di Desa Setupatok.</p>
+    </div>
+  </section>
+
+  <section id="ajukan" class="alt-bg">
+    <div class="wrap">
+      <h2>Ajukan layanan secara online</h2>
+      <p class="lead">Isi formulir, lalu kirim ke petugas desa lewat WhatsApp atau email. Anda mendapat kode pengajuan untuk disebutkan saat mengambil surat di kantor desa.</p>
+      <div class="form">
+        <div class="f"><label for="jenis">Jenis layanan</label>
+          <select id="jenis"><option value="">Pilih layanan</option><option>Surat pengantar KTP / KK</option><option>Surat keterangan domisili</option><option>Surat keterangan tidak mampu (SKTM)</option><option>Surat keterangan usaha</option><option>Akta kelahiran / kematian</option><option>Layanan lainnya</option></select></div>
+        <div class="row">
+          <div class="f"><label for="nama">Nama lengkap</label><input id="nama" autocomplete="name"></div>
+          <div class="f"><label for="nik">NIK</label><input id="nik" inputmode="numeric" maxlength="16" autocomplete="off"><small>16 digit sesuai KTP</small></div>
+        </div>
+        <div class="row">
+          <div class="f"><label for="hp">Nomor HP / WhatsApp</label><input id="hp" type="tel" inputmode="tel" autocomplete="tel"></div>
+          <div class="f"><label for="alamat">Alamat (dusun, RT/RW)</label><input id="alamat" autocomplete="street-address"></div>
+        </div>
+        <div class="f"><label for="perlu">Keperluan</label><textarea id="perlu"></textarea><small>Contoh: melamar kerja, mendaftar sekolah, mengurus bantuan.</small></div>
+        <div class="chk"><input type="checkbox" id="setuju"><label for="setuju">Data yang saya isi benar, dan saya bersedia membawa berkas asli ke kantor desa.</label></div>
+        <div class="acts">
+          <button type="button" id="bWa">Kirim lewat WhatsApp</button>
+          <button type="button" class="alt" id="bMail">Kirim lewat email</button>
+          <button type="button" class="alt" id="bCopy">Salin teks pengajuan</button>
+        </div>
+        <p id="status" role="status"></p>
+        <p class="note">Formulir ini tidak menyimpan data di situs. Pesan terkirim lewat aplikasi Anda sendiri. Lampirkan foto KTP dan KK pada chat WhatsApp bila diminta petugas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="berita">
+    <div class="wrap">
+      <h2>Berita dan pengumuman</h2>
+      <div class="grid">
+        <article class="panel"><time>Contoh · tanggal kegiatan</time><h3>Musyawarah Desa (Musdes)</h3><p>Warga diundang membahas rencana pembangunan dan anggaran desa tahun berjalan.</p></article>
+        <article class="panel"><time>Contoh · tanggal kegiatan</time><h3>Posyandu bulanan</h3><p>Pemeriksaan balita dan ibu hamil di posyandu masing-masing RW.</p></article>
+        <article class="panel"><time>Contoh · tanggal kegiatan</time><h3>Kerja bakti lingkungan</h3><p>Pembersihan saluran air dan jalan lingkungan bersama warga dan perangkat desa.</p></article>
+      </div>
+      <p class="note">Ganti ketiga kartu ini dengan berita desa yang sebenarnya.</p>
+    </div>
+  </section>
+
+  <section id="potensi">
+    <div class="wrap">
+      <h2>Potensi desa</h2>
+      <div class="grid">
+        <div class="panel"><h3>Pertanian</h3><p>Lahan dan hasil tani yang menjadi sumber penghasilan warga.</p></div>
+        <div class="panel"><h3>UMKM</h3><p>Usaha kecil dan kerajinan warga yang terus tumbuh.</p></div>
+        <div class="panel"><h3>Perikanan</h3><p>Peluang usaha perikanan dan olahan hasil laut di wilayah pesisir Cirebon.</p></div>
+      </div>
+      <div class="table-scroll" style="margin-top:28px">
+        <table>
+          <caption style="text-align:left;font-weight:700;padding-bottom:8px">Perangkat desa</caption>
+          <thead><tr><th>Jabatan</th><th>Nama</th></tr></thead>
+          <tbody>
+            <tr><td>Kepala Desa (Kuwu)</td><td>…</td></tr>
+            <tr><td>Sekretaris Desa</td><td>…</td></tr>
+            <tr><td>Kaur Keuangan</td><td>…</td></tr>
+            <tr><td>Kaur Umum dan Perencanaan</td><td>…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak" class="alt-bg">
+    <div class="wrap two">
+      <div>
+        <h2>Hubungi kami</h2>
+        <dl>
+          <dt>Kantor Desa Setupatok</dt><dd>Kec. Mundu, Kab. Cirebon, Jawa Barat</dd>
+          <dt>Jam pelayanan</dt><dd>Senin sampai Jumat, 08.00 – 15.00 WIB</dd>
+          <dt>Telepon / WhatsApp</dt><dd>… (isi nomor resmi desa)</dd>
+          <dt>Email</dt><dd>… (isi alamat email desa)</dd>
+        </dl>
+      </div>
+      <div>
+        <h2>Pengaduan warga</h2>
+        <p>Sampaikan saran atau pengaduan langsung ke kantor desa atau lewat nomor WhatsApp resmi di samping. Setiap laporan akan ditindaklanjuti oleh perangkat desa.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="th">2026</span> Pemerintah Desa Setupatok, Kecamatan Mundu, Kabupaten Cirebon.</div>
+</footer>
+<script>
+document.getElementById("th").textContent=new Date().getFullYear();
+/* ISI nomor WhatsApp (format 62812xxxxxxx, tanpa + atau spasi) dan email resmi desa */
+var WA_DESA="", EMAIL_DESA="", kode="";
+var $=function(i){return document.getElementById(i)};
+function say(t,c){var s=$("status");s.textContent=t;s.className=c||""}
+function susun(){
+  var d={jenis:$("jenis").value,nama:$("nama").value.trim(),nik:$("nik").value.replace(/\s/g,""),hp:$("hp").value.trim(),alamat:$("alamat").value.trim(),perlu:$("perlu").value.trim()};
+  if(!d.jenis){say("Pilih jenis layanan terlebih dahulu.","err");$("jenis").focus();return null}
+  if(d.nama.length<3){say("Isi nama lengkap Anda.","err");$("nama").focus();return null}
+  if(!/^\d{16}$/.test(d.nik)){say("NIK harus 16 digit angka.","err");$("nik").focus();return null}
+  if(d.hp.replace(/\D/g,"").length<9){say("Isi nomor HP yang bisa dihubungi.","err");$("hp").focus();return null}
+  if(!d.alamat){say("Isi alamat Anda.","err");$("alamat").focus();return null}
+  if(!d.perlu){say("Tulis keperluan pengajuan.","err");$("perlu").focus();return null}
+  if(!$("setuju").checked){say("Centang pernyataan persetujuan.","err");$("setuju").focus();return null}
+  if(!kode){var n=new Date();kode="SP-"+String(n.getFullYear()).slice(2)+String(n.getMonth()+1).padStart(2,"0")+String(n.getDate()).padStart(2,"0")+"-"+Math.floor(1000+Math.random()*9000)}
+  return "PENGAJUAN LAYANAN ONLINE - DESA SETUPATOK\nKode: "+kode+"\nLayanan: "+d.jenis+"\nNama: "+d.nama+"\nNIK: "+d.nik+"\nHP: "+d.hp+"\nAlamat: "+d.alamat+"\nKeperluan: "+d.perlu+"\n\nBerkas asli akan saya bawa ke kantor desa.";
+}
+$("bWa").onclick=function(){
+  var t=susun();if(!t)return;
+  if(!WA_DESA){say("Nomor WhatsApp desa belum diatur. Gunakan Salin teks pengajuan, lalu kirim manual.","err");return}
+  window.open("https://wa.me/"+WA_DESA+"?text="+encodeURIComponent(t),"_blank","noopener");
+  say("WhatsApp terbuka. Tekan kirim di sana. Kode pengajuan Anda: "+kode,"ok");
+};
+$("bMail").onclick=function(){
+  var t=susun();if(!t)return;
+  if(!EMAIL_DESA){say("Email desa belum diatur. Gunakan Salin teks pengajuan.","err");return}
+  window.location.href="mailto:"+EMAIL_DESA+"?subject="+encodeURIComponent("Pengajuan layanan "+kode)+"&body="+encodeURIComponent(t);
+  say("Aplikasi email terbuka. Kode pengajuan Anda: "+kode,"ok");
+};
+$("bCopy").onclick=function(){
+  var t=susun();if(!t)return;
+  var done=function(){say("Teks tersalin. Tempel dan kirim ke petugas desa. Kode pengajuan: "+kode,"ok")};
+  try{navigator.clipboard.writeText(t).then(done,function(){say("Gagal menyalin. Pilih dan salin teks secara manual.","err")})}
+  catch(e){say("Gagal menyalin. Pilih dan salin teks secara manual.","err")}
+};
+</script>
+</body>
+</html>
